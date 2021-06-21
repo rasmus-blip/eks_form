@@ -1,0 +1,152 @@
+@import "../abstracts/";
+
+input {
+  //appearance none, so mobile devices have innershadow on inputs
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  width: 100%;
+  border: none;
+  background-color: $bg_clr;
+  outline: none;
+  padding: 0.5rem 1rem;
+  box-shadow: $medium_inner;
+  border-radius: 5px;
+
+  transition: box-shadow 0.2s, background-color 0.2s;
+
+  // &:not(:placeholder-shown):not(:focus):not(.amount):invalid {
+  //   box-shadow: $medium_inner, 0px 0px 4px $red_clr;
+  // }
+  // &:not(:placeholder-shown):not(:focus):not(.amount):valid {
+  //   box-shadow: $medium_inner, 0px 0px 2px $green_clr;
+  // }
+
+  &::placeholder {
+    color: $para_clr;
+    opacity: 0.5;
+  }
+
+  &:focus,
+  &:-webkit-autofill {
+    box-shadow: $small_inner;
+    background-color: rgb(232, 240, 254);
+  }
+}
+
+.dark4ever input:focus,
+.darkmode input:focus {
+  background-color: #242323;
+}
+
+.amount_counter {
+  width: 35%;
+  display: flex;
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: $medium_outer;
+  padding: 4px;
+
+  & input {
+    padding: 0.4rem 0.3rem;
+    text-align: center;
+  }
+
+  & span {
+    display: inline-flex;
+    width: 100%;
+    color: $para_clr;
+
+    // background-color: aqua;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: box-shadow 0.1s;
+
+    &:active {
+      box-shadow: $small_inner;
+    }
+
+    &.minus {
+      margin-right: 4px;
+      border-radius: 50px 0 0 50px;
+    }
+
+    &.plus {
+      margin-left: 4px;
+      border-radius: 0 50px 50px 0;
+    }
+  }
+
+  & input {
+    width: 100%;
+  }
+}
+
+span.icon {
+  display: block;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-size: cover;
+  }
+
+  &.email::after {
+    background-image: url("../icons/mail.svg");
+  }
+
+  &.username::after {
+    background-image: url("../icons/person.svg");
+  }
+
+  &.password::after {
+    background-image: url("../icons/lock.svg");
+  }
+
+  &.cardnr::after {
+    background-image: url("../icons/card.svg");
+  }
+
+  &.date::after {
+    background-image: url("../icons/calendar.svg");
+  }
+
+  &.cvv::after {
+    background-image: url("../icons/question.svg");
+  }
+}
+
+.dark4ever span.icon,
+.darkmode span.icon {
+  &.email::after {
+    background-image: url("../icons/mail_dark.svg");
+  }
+
+  &.username::after {
+    background-image: url("../icons/person_dark.svg");
+  }
+
+  &.password::after {
+    background-image: url("../icons/lock_dark.svg");
+  }
+
+  &.cardnr::after {
+    background-image: url("../icons/card_dark.svg");
+  }
+
+  &.date::after {
+    background-image: url("../icons/calendar_dark.svg");
+  }
+
+  &.cvv::after {
+    background-image: url("../icons/question_dark.svg");
+  }
+}

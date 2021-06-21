@@ -1,0 +1,60 @@
+@import "../abstracts/";
+
+:root {
+  font-size: 15px;
+}
+
+legend {
+  font-size: 2rem;
+  color: $heading_clr;
+  font-family: "roboto", sans-serif;
+}
+
+label,
+p,
+h2 {
+  font-family: "roboto", sans-serif;
+  color: $para_clr;
+  margin-bottom: 0.6rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button {
+  color: $para_clr;
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-family: "roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.txt_btn {
+  font-size: 0.9rem;
+}
+
+@media only screen and (min-width: 500px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+.beer_description {
+  & p {
+    font-size: 1rem;
+  }
+}
+
+.beer_name {
+  font-size: 1.4rem;
+}
+
+#catalogue_list p {
+  font-weight: bold;
+  & span {
+    font-weight: 400;
+  }
+}
